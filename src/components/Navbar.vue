@@ -21,7 +21,10 @@
 <style>
 
 .nav-background{
-    background-color: rgba(0, 0, 0, 0.926);
+  background: rgba(185, 4, 235, 0.479);
+  box-shadow: 0 8px 32px 0 rgba(42, 10, 80, 0.37);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
     display: flex;
   justify-content: center;
 

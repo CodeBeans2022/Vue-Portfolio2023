@@ -27,7 +27,7 @@ name: 'Home'
 .background{
     width: 100%;
     height: 100vh;
-    background-image: url(../assets/myimage.png);
+    background-image: url(https://i.postimg.cc/5NvPPhgY/myimage.png);
     background-size: cover;
     background-repeat: no-repeat;
     box-shadow: inset 120px 100px 250px #000000, inset -120px -100px 250px #000000;
