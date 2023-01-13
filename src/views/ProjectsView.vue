@@ -10,14 +10,6 @@ import Projects from '@/components/Projects.vue'
         components: {
             Projects
         }
-
-    // data() {
-    //     return {
-    //         projectCards: [
-
-    //         ]
-    //     }
-    // }    
     }
 </script>
 

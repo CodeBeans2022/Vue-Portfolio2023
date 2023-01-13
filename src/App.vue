@@ -20,7 +20,7 @@ export default {
 
 .gridContainer{
   display: grid;
-  grid-template-columns: 7fr 1fr;
+grid-template-columns: 7fr 1fr;
   grid-template-rows: 1fr;
   min-height: 100vh;
 
