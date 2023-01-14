@@ -1,5 +1,8 @@
 <template>
-    <div class="container mt-5">
+   <div class="loader" v-if="loaderDisplay">
+        <Loader/>
+    </div>
+    <div class="container mt-5" v-else>
 
         <div class="row">
 
@@ -54,8 +57,12 @@
 </template>
 
 <script>
+import Loader from '@/components/PageLoader.vue'
 export default {
-    name: 'About'
+    name: 'About',
+    components: {
+      Loader
+    }
 }
 </script>
 

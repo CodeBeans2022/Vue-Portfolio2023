@@ -1,5 +1,8 @@
 <template>
-<div class="background">
+       <div class="loader" v-if="loaderDisplay">
+        <Loader/>
+    </div>
+<div class="background" v-else>
     <div class="homeText">
     <h1 class="display-6">Bonjour, I'm Jamie-Lee Kinnear.</h1>
     <h2 class="lead">Aspiring Full-Stack Developer and I.T Engineer.</h2>
@@ -8,8 +11,34 @@
 </template>
 
 <script>
+import Loader from '@/components/PageLoader.vue'
 export default {
-name: 'Home'
+name: 'Home',
+components: {
+      Loader
+    },
+    data() {
+        return {
+            randomArray: [
+                {
+                    name: 'Home',
+                },
+                {
+                    name: 'About',
+                },
+                {
+                    name: 'Resume',
+                }
+            ],
+            loaderDisplay: true
+        }
+    },
+    mounted() {
+    setTimeout(() => {
+        this.loaderDisplay = false
+        console.log(this.loaderDisplay);
+    }, 2000)
+}
 }
 </script>
 

@@ -1,5 +1,8 @@
 <template>
-    <div class="container">
+       <div class="loader" v-if="loaderDisplay">
+        <Loader/>
+    </div>
+    <div class="container" v-else>
         <div class="row">
             <div class="col">
                 <div id="carouselFade" class="carousel slide carousel-fade">
@@ -34,8 +37,12 @@
 
 
 <script>
+import Loader from '@/components/PageLoader.vue'
 export default {
     name: 'Testimonials',
+    components: {
+      Loader
+    },
     data() {
         return {
             testimonials: [
@@ -75,9 +82,16 @@ export default {
                     githubLink: '',
                     netlifyLink: ''
                 }
-            ]
+            ],
+            loaderDisplay: true, 
         }
-    }
+    },
+    mounted() {
+    setTimeout(() => {
+        this.loaderDisplay = false
+        console.log(this.loaderDisplay);
+    }, 2000)
+}
 }
 </script>
 
@@ -88,7 +102,7 @@ img {
     width: 30rem;
     margin-bottom: 30px;
     object-fit: cover;
-    box-shadow: 0 18px 152px 0 rgba(234, 0, 255, 0.631);
+    box-shadow: 0 8px 32px 0 rgba(80, 2, 89, 0.831);
     border-radius: 50% !important;
 }
 .card{

@@ -93,14 +93,17 @@ export default {
 
 .nav-link:visited {
   color: white;
+  
 }
 
 .nav-link:active {
   background-color: orchid;
+  
 }
 
 .nav-text-color {
   color: white;
+  
 }
 
 .navMobile{

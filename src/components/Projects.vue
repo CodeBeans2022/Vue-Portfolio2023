@@ -1,5 +1,8 @@
 <template>
-    <div class="container">
+       <div class="loader" v-if="loaderDisplay">
+        <Loader/>
+    </div>
+    <div class="container" v-else>
         <div class="row">
             <div class="col cardDisplay scrollspy mt-4">
                 <div class="card" v-for="item in projectCards" :key="item">
@@ -16,8 +19,12 @@
 </template>
 
 <script>
+import Loader from '@/components/PageLoader.vue'
 export default {
     name: 'Projects',
+    components: {
+      Loader
+    },
     data() {
         return {
             projectCards: [
@@ -97,10 +104,23 @@ export default {
                     projectName: 'Grid Calculator',
                     githubLink: 'https://github.com/CodeBeans2022/Grid-Calculator',
                     netlifyLink: 'https://lees-calculator2022.netlify.app/'
+                },
+                {
+                    image: 'https://i.postimg.cc/J0nwbvm1/bsporti-2.png',
+                    projectName: 'BS-Porfolio2022',
+                    githubLink: 'https://github.com/CodeBeans2022/BS_Portfolio2022',
+                    netlifyLink: 'https://jamieleekinnear2022.netlify.app/'
                 }
-            ]
+            ],
+            loaderDisplay: true
         }
-    }
+    },
+    mounted() {
+    setTimeout(() => {
+        this.loaderDisplay = false
+        console.log(this.loaderDisplay);
+    }, 2000)
+}
 }
 
 

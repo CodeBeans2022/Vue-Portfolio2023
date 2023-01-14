@@ -1,5 +1,8 @@
 <template>
-<div class="container mt-5 ">
+       <div class="loader" v-if="loaderDisplay">
+        <Loader/>
+    </div>
+<div class="container mt-5 " v-else>
     <div class="row wandeDisplay">
         <div class="col">
             <h1 class="mb-5">Work Experience</h1>
@@ -72,9 +75,12 @@
 </template>
 
 <script>
-
+import Loader from '@/components/PageLoader.vue'
 export default {
     name: 'Resume',
+    components: {
+      Loader
+    },
    methods: {
    clicking: function(item){
     let linksArray1 = [...this.resumeWork]
@@ -203,9 +209,16 @@ linksArray2.forEach((item) =>{
                 duration: 'January 2015-December 2016',
                 location: `Portland, Mitchell's Plain`
             }
-        ]
+        ],
+        loaderDisplay: true
     }
 } ,
+mounted() {
+    setTimeout(() => {
+        this.loaderDisplay = false
+        console.log(this.loaderDisplay);
+    }, 2000)
+}
 
 }
 </script>
