@@ -20,10 +20,25 @@ export default {
 
 .gridContainer{
   display: grid;
-grid-template-columns: 7fr 1fr;
+  grid-template-columns: 7fr 1fr;
   grid-template-rows: 1fr;
   min-height: 100vh;
 
+}
+
+@media screen and (max-width: 760px){
+  .gridContainer{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .nav-background{
+    display: none !important;
+  }
+  .navMobile{
+    display: block !important;
+  }
 }
 
 </style>
