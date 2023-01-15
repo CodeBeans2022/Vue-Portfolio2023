@@ -12,7 +12,7 @@
         <div class="col">
             <h1 class="mb-5">Work Experience</h1>
             <div class="row">
-                <div class="col">
+                <div class="col" id="backcolwork">
                     <div id="worklist" class="d-flex flex-column gap-2 worklist-scrollspy text-center" v-for="item in resumeWork" :key="item" >
                         <a class="p-1 rounded my-3 anchorClass" :href="'#' + item.stringId" @click="clicking(item)" :class="item.class">{{ item.company }}</a>
                     </div>
@@ -45,7 +45,7 @@
         <div class="col">
             <h1 class="mb-5">Education Experience</h1>
             <div class="row">
-                <div class="col">
+                <div class="col" id="backcoledu">
                     <div id="educationlist" class="d-flex flex-column gap-2 worklist-scrollspy text-center" v-for="item in resumeEducation" :key="item" >
                         <a class="p-1 rounded my-3 anchorClass" :href="'#' + item.stringId" @click="clicking(item)" :class="item.class">{{ item.institution }}</a>
                     </div>
@@ -242,6 +242,7 @@ a {
 
 .active{
   background-color: orchid;
+  
 }
 
 .scrollspy{
@@ -262,14 +263,6 @@ table{
     height: 100%;
 }
 
-@media screen and (max-width: 760px){
-    .wandeDisplay{
-    display: flex;
-    flex-direction: column;
-    margin-top: 50px;
-}
-}
-
 .loader button{
     margin-top: 250px;
     background-color: transparent;
@@ -280,4 +273,45 @@ table{
     font-size: 90px;
     
 }
+
+#backcolwork{
+    background: rgba(0, 0, 0, 0.35);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 10px;
+  color: white;
+  
+}
+
+#backcoledu{
+    background: rgba(0, 0, 0, 0.35);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 10px;
+  color: white;
+
+}
+
+#educationlist:hover{
+    background-color: orchid;
+    height: 50px;
+border-radius: 20px;
+}
+
+#worklist:hover {
+    background-color: orchid;
+    height: 50px;
+border-radius: 20px;  
+}
+
+@media screen and (max-width: 760px){
+    .wandeDisplay{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+}
+
 </style>
