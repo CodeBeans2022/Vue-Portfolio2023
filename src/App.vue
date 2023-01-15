@@ -44,9 +44,9 @@ export default {
   }
 }
 
-*{
+/* *{
   text-decoration: none;
-}
+} */
 
 @media screen and (max-width: 760px){
   Footer{

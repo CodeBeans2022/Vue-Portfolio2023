@@ -5,7 +5,7 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+    <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
@@ -48,6 +48,11 @@ export default {
 Footer{
   font-size: 14px;
 }
+
+.offcanvas{
+height: 100% !important; 
+}
+
 .nav-background {
   background: rgba(185, 4, 235, 0.479);
   box-shadow: 0 8px 32px 0 rgba(42, 10, 80, 0.37);
@@ -100,6 +105,11 @@ Footer{
   color: white;
 }
 
+.nav:hover{
+  background-color: orchid !important;
+  color: white;
+}
+
 .nav-link:visited {
   color: white;
   
@@ -108,6 +118,14 @@ Footer{
 .nav-link:active {
   background-color: orchid;
   
+}
+
+.nav:active{
+  background-color: orchid;
+}
+
+.nav:visited{
+  color: white;
 }
 
 .nav-text-color {
@@ -119,6 +137,16 @@ Footer{
   background-color: orchid;
   display: none !important;
 }
+
+.offcanvas-body .nav{
+  text-decoration: none;
+  color: white;
+display: flex;
+justify-content: center;
+margin-top: 100px;
+
+}
+
 #offcanvasNavbar{
   background-color: orchid;
 }
