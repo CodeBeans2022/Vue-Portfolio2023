@@ -1,19 +1,20 @@
 <template>
   <div class="gridContainer">
+    
     <router-view/>
     <Navbar/>
-</div>
-<Footer class="container-fluid text-light text-center position-fixed bottom-0"
-    style="height: 50px; width: 87.5%; padding: 10px; z-index:10; background-color:darkorchid;">Jamie-Lee Kinnear 2022</Footer>
+  </div>
 </template>
 
 <script>
 
 import Navbar from '@/components/Navbar.vue'
+import FooterView from '@/components/Footer.vue'
 
 export default {
   components: {
-    Navbar
+    Navbar,
+    FooterView
   }
 }
 </script>

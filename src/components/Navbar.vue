@@ -30,17 +30,24 @@
       <router-link class="nav-link nav-text-color" to="/projects">Projects</router-link>
       <router-link class="nav-link nav-text-color" to="/testimonials">Testimonials</router-link>
       <router-link class="nav-link nav-text-color" to="/contact">Contact Me</router-link>
+      <Footer class="container-fluid text-light text-center position-fixed" style="height: 45px; margin-bottom: 35px; margin-top: 800px;  width: 75%; z-index:10; background-color:darkorchid; border-radius: 5px;">Jamie-Lee Kinnear 2023</Footer>
     </nav>
   </div>
+  
 </template>
 
 <script>
+
 export default {
-  name: 'Navbar'
+  name: 'Navbar',
+
 }
 </script>
 
 <style>
+Footer{
+  font-size: 14px;
+}
 .nav-background {
   background: rgba(185, 4, 235, 0.479);
   box-shadow: 0 8px 32px 0 rgba(42, 10, 80, 0.37);
@@ -50,6 +57,7 @@ export default {
   justify-content: center;
 
 }
+
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -73,11 +81,12 @@ export default {
   width: fit-content;
   height: 65vh;
   border-radius: 20px;
-  margin-top: 100px;
+  margin-top: 0px;
   justify-content: space-around;
   text-decoration: none;
   background-color: darkorchid;
   padding: 0 12px !important;
+  margin-top: 10px;
 }
 
 .nav-text-color {

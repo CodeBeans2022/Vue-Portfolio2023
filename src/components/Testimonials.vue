@@ -1,8 +1,14 @@
 <template>
        <div class="loader" v-if="loaderDisplay">
-        <Loader/>
+        <div v-for="item in testimonialArray" :key="item">
+        <button class="btn btn-success" type="button" disabled>
+            <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+            {{ item.name }}
+        </button>
+    </div>
     </div>
     <div class="container" v-else>
+    <div class="container" >
         <div class="row">
             <div class="col">
                 <div id="carouselFade" class="carousel slide carousel-fade">
@@ -33,16 +39,13 @@
                 <span class="carousel-control" aria-hidden="true"><i class="fa-sharp fa-solid fa-arrow-right"></i></span>
             </button>
     </div>
+</div>
 </template>
 
 
 <script>
-import Loader from '@/components/PageLoader.vue'
 export default {
     name: 'Testimonials',
-    components: {
-      Loader
-    },
     data() {
         return {
             testimonials: [
@@ -81,6 +84,11 @@ export default {
                     text: 'Jamie-Lee Kinnear is a hard-working individual and great learner, always going the extra mile to make sure that she understands the task at hand in order to get the job done to perfection. She has a great eye for detail and has the ability to read, understand and implement code as if she was a natural.',
                     githubLink: '',
                     netlifyLink: ''
+                }
+            ],
+            testimonialArray: [
+                {
+                    name: 'Testimonials'
                 }
             ],
             loaderDisplay: true, 
@@ -150,7 +158,7 @@ h5{
 margin-top: 150px;
 }
 
-button{
+.container-grid button{
     border-radius: 50%;
     padding: 5px;
     height: 75px;
@@ -171,4 +179,14 @@ button:hover{
     margin-left: 550px;
 }
 
+.loader button{
+    margin-top: 250px;
+    background-color: transparent;
+    border:none ;
+    color: darkorchid;
+    height: 100px;
+    width: 400px;
+    font-size: 90px;
+    
+}
 </style>

@@ -1,6 +1,11 @@
 <template>
    <div class="loader" v-if="loaderDisplay">
-        <Loader/>
+        <div v-for="item in aboutArray" :key="item">
+        <button class="btn btn-success" type="button" disabled>
+            <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+            {{ item.name }}
+        </button>
+    </div>
     </div>
     <div class="container mt-5" v-else>
 
@@ -47,22 +52,30 @@
                 </tr>
               </table>
             </div>
-
         </div>
-
-
-
-
     </div>
 </template>
 
 <script>
-import Loader from '@/components/PageLoader.vue'
+
 export default {
     name: 'About',
-    components: {
-      Loader
+  data(){
+    return {
+      aboutArray: [
+        {
+          name: 'About'
+        }
+      ],
+      loaderDisplay: true
     }
+  },
+  mounted() {
+    setTimeout(() => {
+        this.loaderDisplay = false
+        console.log(this.loaderDisplay);
+    }, 2000)
+}
 }
 </script>
 
@@ -72,6 +85,16 @@ export default {
     width: 250px;
     object-fit: cover;
     border-radius: 30px;
+}
+.loader button{
+    margin-top: 250px;
+    background-color: transparent;
+    border:none ;
+    color: darkorchid;
+    height: 100px;
+    width: 400px;
+    font-size: 90px;
+    
 }
 
 

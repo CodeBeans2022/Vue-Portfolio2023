@@ -1,6 +1,11 @@
 <template>
-       <div class="loader" v-if="loaderDisplay">
-        <Loader/>
+     <div class="loader" v-if="loaderDisplay">
+        <div v-for="item in resumeArray" :key="item">
+        <button class="btn btn-success" type="button" disabled>
+            <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+            {{ item.name }}
+        </button>
+    </div>
     </div>
 <div class="container mt-5 " v-else>
     <div class="row wandeDisplay">
@@ -53,7 +58,7 @@
                                 <td>{{ item.institution }}</td>
                             </tr>
                             <tr>
-                                <th scope="row">Occupation</th>
+                                <th scope="row">Course</th>
                                 <td>{{ item.course }}</td>
                             </tr>
                             <tr>
@@ -75,12 +80,8 @@
 </template>
 
 <script>
-import Loader from '@/components/PageLoader.vue'
 export default {
     name: 'Resume',
-    components: {
-      Loader
-    },
    methods: {
    clicking: function(item){
     let linksArray1 = [...this.resumeWork]
@@ -210,6 +211,11 @@ linksArray2.forEach((item) =>{
                 location: `Portland, Mitchell's Plain`
             }
         ],
+        resumeArray: [
+            {
+                name: 'Resume',
+            }
+        ],
         loaderDisplay: true
     }
 } ,
@@ -264,4 +270,14 @@ table{
 }
 }
 
+.loader button{
+    margin-top: 250px;
+    background-color: transparent;
+    border:none ;
+    color: darkorchid;
+    height: 100px;
+    width: 400px;
+    font-size: 90px;
+    
+}
 </style>

@@ -1,6 +1,11 @@
 <template>
        <div class="loader" v-if="loaderDisplay">
-        <Loader/>
+        <div v-for="item in projectsArray" :key="item">
+        <button class="btn btn-success" type="button" disabled>
+            <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+            {{ item.name }}
+        </button>
+    </div>
     </div>
     <div class="container" v-else>
         <div class="row">
@@ -19,12 +24,8 @@
 </template>
 
 <script>
-import Loader from '@/components/PageLoader.vue'
 export default {
     name: 'Projects',
-    components: {
-      Loader
-    },
     data() {
         return {
             projectCards: [
@@ -97,7 +98,8 @@ export default {
                 {
                     image: 'https://i.postimg.cc/tJmkV6M2/vue-E5.png',
                     projectName: 'Medicine Store',
-                    githubLink: 'https://github.com/CodeBeans2022/Vue_Exercise5_Ec'
+                    githubLink: 'https://github.com/CodeBeans2022/Vue_Exercise5_Ecco',
+                    netlifyLink: 'https://vue-medicine-store2023.netlify.app/'
                 },
                 {
                     image: 'https://i.postimg.cc/KvWxDvkW/Grid-Calculator.png',
@@ -110,6 +112,11 @@ export default {
                     projectName: 'BS-Porfolio2022',
                     githubLink: 'https://github.com/CodeBeans2022/BS_Portfolio2022',
                     netlifyLink: 'https://jamieleekinnear2022.netlify.app/'
+                }
+            ],
+            projectsArray: [
+                {
+                    name: 'Projects'
                 }
             ],
             loaderDisplay: true
@@ -158,6 +165,17 @@ a:hover{
     background-color: orchid;
     padding: 10px;
     border-radius: 50%;
+}
+
+.loader button{
+    margin-top: 250px;
+    background-color: transparent;
+    border:none ;
+    color: darkorchid;
+    height: 100px;
+    width: 400px;
+    font-size: 90px;
+    
 }
 
 @media screen and (max-width: 760px){
